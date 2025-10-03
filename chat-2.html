@@ -15,12 +15,13 @@
     }
     .chat-wrapper {
       width: 100%;
-      max-width: 600px;
+      max-width: 700px;
       height: 90vh;
       display: flex;
       flex-direction: column;
       background: #fff;
-      border-radius: 0.0rem 0.0rem 1.5rem 1.5rem;
+      border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,.1);
     }
     .chat-box {
       flex: 1;
@@ -61,9 +62,9 @@
 <div class="chat-wrapper">
   
   <!-- Чат -->
-  <div class="chat-box" id="chatBox">
-    <div class="message bot">Привет! Чем могу помочь?</div>
-    <div class="message user">Хочу узнать статус заказа. Lorem ipsum dolor im seit. Fatum ratum verbatum. Simpus crampus peromantus.
+  <div class="chat-box mt-3" id="chatBox">
+    <div class="message bot">Hello! How can assist you?</div>
+    <div class="message user">Lorem ipsum dolor im seit. Fatum ratum verbatum. Simpus crampus peromantus.
 	The applications of LLM Agents are becoming increasingly complex and diverse, leading to a high demand for structured outputs that can be parsed into code, structured function calls, and embodied agent commands. 
 	These developments bring significant demands for structured generation in LLM inference. Context-free grammar is a flexible approach to enable structured generation via constrained decoding. 
 	However, executing context-free grammar requires going through several stack states over all tokens in vocabulary during runtime, bringing non-negligible overhead for structured generation. 
@@ -79,7 +80,7 @@
   <div class="chat-input mt-2 rounded-pill">
     <form class="d-flex" id="chatForm">
       <input type="text" class="form-control me-2" placeholder="Message to Assistant..." id="chatInput">
-      <button class="btn btn-primary rounded-pill">Отправить</button>
+      <button class="btn btn-primary rounded-pill">Send</button>
     </form>
   </div>
 
