@@ -19,17 +19,19 @@
       height: 90vh;
       display: flex;
       flex-direction: column;
+      background: #fff;
+      border-radius: 0.0rem 0.0rem 1.5rem 1.5rem;
     }
     .chat-box {
       flex: 1;
       overflow-y: auto;
-      padding: 15px;
+      padding: 1rem;
       background: #fff;
-      border-radius: .5rem .5rem 0 0;
-      box-shadow: 0 0 10px rgba(0,0,0,.1);
+      border-radius: 0.0rem 0.0rem 0.0rem 0.0rem;
+
     }
     .message {
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
       max-width: 75%;
     }
     .message.user {
@@ -37,19 +39,20 @@
       background: #0d6efd;
       color: #fff;
       border-radius: 1rem 1rem 0 1rem;
-      padding: 10px 15px;
+      padding: 10px 1rem;
     }
     .message.bot {
       margin-right: auto;
       background: #e9ecef;
       border-radius: 1rem 1rem 1rem 0;
-      padding: 10px 15px;
+      padding: 10px 1rem;
     }
     .chat-input {
       background: #fff;
       border-top: 1px solid #dee2e6;
       padding: .75rem;
-      border-radius: 0 0 .5rem .5rem;
+      border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,.1);
     }
   </style>
 </head>
@@ -73,10 +76,10 @@
   </div>
 
   <!-- Форма ввода (всегда внизу) -->
-  <div class="chat-input">
+  <div class="chat-input mt-2 rounded-pill">
     <form class="d-flex" id="chatForm">
-      <input type="text" class="form-control me-2" placeholder="Введите сообщение..." id="chatInput">
-      <button class="btn btn-primary">Отправить</button>
+      <input type="text" class="form-control me-2" placeholder="Message to Assistant..." id="chatInput">
+      <button class="btn btn-primary rounded-pill">Отправить</button>
     </form>
   </div>
 
