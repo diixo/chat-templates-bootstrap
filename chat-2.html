@@ -58,7 +58,7 @@
     .avatar {
       width: 36px;
       height: 36px;
-      background: #dee2e6;
+      background: #e7e4f6;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -76,6 +76,7 @@
     }
     .avatar i {
       color: #6c757d;
+      font-size: 20px;
     }
   </style>
 </head>
@@ -87,7 +88,7 @@
   <div class="chat-box mt-4" id="chatBox">
     <div class="message bot">
       <div class="avatar"><i class="fa-solid fa-robot"></i></div>
-      <div class="bubble">Привет! Чем могу помочь?</div>
+      <div class="bubble">Hello! What can I help with?</div>
     </div>
     <div class="message user">Lorem ipsum dolor im seit. Fatum ratum verbatum. Simpus crampus peromantus.
 	The applications of LLM Agents are becoming increasingly complex and diverse, leading to a high demand for structured outputs that can be parsed into code, structured function calls, and embodied agent commands. 
@@ -126,7 +127,7 @@
     // User message
     const userMsg = document.createElement('div');
     userMsg.className = 'message user';
-    userMsg.textContent = text;
+    userMsg.innerHTML = `<div class="bubble">${text}</div>`;
     chatBox.appendChild(userMsg);
 
     chatInput.value = '';
@@ -136,7 +137,10 @@
     setTimeout(() => {
       const botMsg = document.createElement('div');
       botMsg.className = 'message bot';
-      botMsg.textContent = 'Бот отвечает: "' + text + '"';
+      botMsg.innerHTML = `
+        <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+        <div class="bubble">Bot answered: "${text}"</div>
+      `;
       chatBox.appendChild(botMsg);
       chatBox.scrollTop = chatBox.scrollHeight;
     }, 800);
