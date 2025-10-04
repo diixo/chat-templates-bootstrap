@@ -15,7 +15,7 @@
     }
     .chat-wrapper {
       width: 100%;
-      max-width: 700px;
+      max-width: 720px;
       height: 90vh;
       display: flex;
       flex-direction: column;
@@ -37,14 +37,14 @@
     }
     .message.user {
       margin-left: auto;
-      background: #0d6efd;
+      background: #8050f8;
       color: #fff;
       border-radius: 1rem 1rem 0 1rem;
       padding: 10px 1rem;
     }
     .message.bot {
       margin-right: auto;
-      background: #e9ecef;
+      background: #efeefe;
       border-radius: 1rem 1rem 1rem 0;
       padding: 10px 1rem;
     }
@@ -61,23 +61,16 @@
 
 <div class="chat-wrapper">
   
-  <!-- Чат -->
+  <!-- Chat -->
   <div class="chat-box mt-3" id="chatBox">
     <div class="message bot">Hello! How can assist you?</div>
     <div class="message user">Lorem ipsum dolor im seit. Fatum ratum verbatum. Simpus crampus peromantus.
 	The applications of LLM Agents are becoming increasingly complex and diverse, leading to a high demand for structured outputs that can be parsed into code, structured function calls, and embodied agent commands. 
-	These developments bring significant demands for structured generation in LLM inference. Context-free grammar is a flexible approach to enable structured generation via constrained decoding. 
-	However, executing context-free grammar requires going through several stack states over all tokens in vocabulary during runtime, bringing non-negligible overhead for structured generation. 
-	In this paper, we propose XGrammar, a flexible and efficient structure generation engine for large language models. 
-	XGrammar accelerates context-free grammar execution by dividing the vocabulary into context-independent tokens that can be prechecked and context-dependent tokens that need to be interpreted during runtime. 
-	We further build transformations to expand the grammar context and reduce the number of context-independent tokens. Additionally, we build an efficient persistent stack to accelerate the context-dependent token checks. 
-	Finally, we co-design the grammar engine with LLM inference engine to overlap grammar computation with GPU executions. Evaluation results show that XGrammar can achieve up to 100x speedup over existing solutions. 
-	Combined with an LLM inference engine, it can generate near-zero overhead structure generation in end-to-end low-LLM serving.
 	</div>
   </div>
 
-  <!-- Форма ввода (всегда внизу) -->
-  <div class="chat-input mt-2 rounded-pill">
+  <!-- Input form (always in bottom) -->
+  <div class="chat-input rounded-pill">
     <form class="d-flex" id="chatForm">
       <input type="text" class="form-control me-2" placeholder="Message to Assistant..." id="chatInput">
       <button class="btn btn-primary rounded-pill">Send</button>
@@ -96,7 +89,7 @@
     const text = chatInput.value.trim();
     if (!text) return;
 
-    // Сообщение пользователя
+    // User message
     const userMsg = document.createElement('div');
     userMsg.className = 'message user';
     userMsg.textContent = text;
@@ -105,7 +98,7 @@
     chatInput.value = '';
     chatBox.scrollTop = chatBox.scrollHeight;
 
-    // Ответ бота
+    // Answer from bot
     setTimeout(() => {
       const botMsg = document.createElement('div');
       botMsg.className = 'message bot';
