@@ -47,6 +47,7 @@
       justify-content: flex-end;
       border-radius: 1rem 1rem 0 1rem;
       padding: 10px 1rem;
+      width: fit-content;
     }
 
     .message.bot .bubble {
@@ -92,6 +93,12 @@
     <div class="message user">Lorem ipsum dolor im seit. Fatum ratum verbatum. Simpus crampus peromantus.
 	The applications of LLM Agents are becoming increasingly complex and diverse, leading to a high demand for structured outputs that can be parsed into code, structured function calls, and embodied agent commands. 
 	</div>
+
+    <div class="message bot">
+      <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+      <div class="bubble">Got it!!!</div>
+    </div>
+    <div class="message user">Good!</div>
   </div>
 
   <!-- Input form (always in bottom) -->
@@ -111,12 +118,17 @@
     this.style.height = "auto";                   // reset height
     this.style.height = this.scrollHeight + "px"; // set new height
   });
-</script>
 
-<script>
   const chatForm = document.getElementById('chatForm');
   const chatInput = document.getElementById('chatInput');
   const chatBox = document.getElementById('chatBox');
+
+  chatInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();       // prevent Enter on new line
+      chatForm.requestSubmit(); // trigger the submit of form
+    }
+  });
 
   chatForm.addEventListener('submit', e => {
     e.preventDefault();
